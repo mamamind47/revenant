@@ -1,0 +1,388 @@
+{
+ "types": {
+  "APIToken": {
+   "file": "api_tokens_permissions.go",
+   "create": [],
+   "mut": {
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "BotUser": {
+   "file": "bot_users_permissions.go",
+   "create": [],
+   "mut": {
+    "CanUpdate": {
+     "checks": [],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "Bucket": {
+   "file": "kanban_permissions.go",
+   "create": [],
+   "mut": {
+    "CanUpdate": {
+     "checks": [],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "BulkAssignees": {
+   "file": "task_assignees_permissions.go",
+   "create": [],
+   "mut": {}
+  },
+  "BulkTaskCreation": {
+   "file": "bulk_task_create.go",
+   "create": [
+    "Project.CanWrite"
+   ],
+   "mut": {}
+  },
+  "Label": {
+   "file": "label_permissions.go",
+   "create": [],
+   "mut": {
+    "CanUpdate": {
+     "checks": [],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "LabelTask": {
+   "file": "label_task_permissions.go",
+   "create": [],
+   "mut": {
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "LabelTaskBulk": {
+   "file": "label_task_permissions.go",
+   "create": [],
+   "mut": {}
+  },
+  "LinkSharing": {
+   "file": "link_sharing_permissions.go",
+   "create": [],
+   "mut": {
+    "CanUpdate": {
+     "checks": [],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "Project": {
+   "file": "project_permissions.go",
+   "create": [
+    "Project.CanWrite"
+   ],
+   "mut": {
+    "CanUpdate": {
+     "checks": [
+      "Project.CanWrite",
+      "SavedFilter.CanUpdate"
+     ],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "ProjectDuplicate": {
+   "file": "project_duplicate.go",
+   "create": [
+    "?Project.CanRead",
+    "Project.CanWrite"
+   ],
+   "mut": {}
+  },
+  "ProjectUser": {
+   "file": "project_users_permissions.go",
+   "create": [],
+   "mut": {
+    "CanUpdate": {
+     "checks": [],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "ProjectView": {
+   "file": "project_view_permissions.go",
+   "create": [
+    "SavedFilter.CanUpdate"
+   ],
+   "mut": {
+    "CanUpdate": {
+     "checks": [
+      "SavedFilter.CanUpdate"
+     ],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [
+      "SavedFilter.CanDelete"
+     ],
+     "authorship": false
+    }
+   }
+  },
+  "Reaction": {
+   "file": "reaction_permissions.go",
+   "create": [
+    "?t.CanUpdate"
+   ],
+   "mut": {
+    "CanDelete": {
+     "checks": [
+      "?t.CanUpdate"
+     ],
+     "authorship": false
+    }
+   }
+  },
+  "SavedFilter": {
+   "file": "saved_filters_permissions.go",
+   "create": [],
+   "mut": {
+    "CanUpdate": {
+     "checks": [],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [],
+     "authorship": true
+    }
+   }
+  },
+  "Session": {
+   "file": "sessions_permissions.go",
+   "create": [],
+   "mut": {
+    "CanDelete": {
+     "checks": [],
+     "authorship": true
+    }
+   }
+  },
+  "Subscription": {
+   "file": "subscription_permissions.go",
+   "create": [
+    "Project.CanRead",
+    "Task.CanRead"
+   ],
+   "mut": {
+    "CanDelete": {
+     "checks": [
+      "Project.CanRead",
+      "Task.CanRead"
+     ],
+     "authorship": false
+    }
+   }
+  },
+  "Task": {
+   "file": "tasks_permissions.go",
+   "create": [
+    "Project.CanWrite"
+   ],
+   "mut": {
+    "CanUpdate": {
+     "checks": [
+      "Project.CanWrite"
+     ],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [
+      "Project.CanWrite"
+     ],
+     "authorship": false
+    }
+   }
+  },
+  "TaskAssginee": {
+   "file": "task_assignees_permissions.go",
+   "create": [],
+   "mut": {
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "TaskAttachment": {
+   "file": "task_attachment_permissions.go",
+   "create": [
+    "Task.CanCreate"
+   ],
+   "mut": {
+    "CanDelete": {
+     "checks": [
+      "Task.CanWrite"
+     ],
+     "authorship": false
+    }
+   }
+  },
+  "TaskComment": {
+   "file": "task_comment_permissions.go",
+   "create": [
+    "Task.CanWrite"
+   ],
+   "mut": {
+    "CanUpdate": {
+     "checks": [
+      "Task.CanWrite"
+     ],
+     "authorship": true
+    },
+    "CanDelete": {
+     "checks": [
+      "Task.CanWrite"
+     ],
+     "authorship": true
+    }
+   }
+  },
+  "TaskDuplicate": {
+   "file": "task_duplicate.go",
+   "create": [
+    "Project.CanWrite",
+    "Task.CanRead"
+   ],
+   "mut": {}
+  },
+  "TaskRelation": {
+   "file": "task_relation_permissions.go",
+   "create": [
+    "Task.CanRead",
+    "Task.CanUpdate"
+   ],
+   "mut": {
+    "CanDelete": {
+     "checks": [
+      "Task.CanRead",
+      "Task.CanUpdate"
+     ],
+     "authorship": false
+    }
+   }
+  },
+  "Team": {
+   "file": "teams_permissions.go",
+   "create": [],
+   "mut": {
+    "CanUpdate": {
+     "checks": [],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "TeamMember": {
+   "file": "team_members_permissions.go",
+   "create": [],
+   "mut": {
+    "CanUpdate": {
+     "checks": [],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "TeamProject": {
+   "file": "project_team_permissions.go",
+   "create": [
+    "Team.CanRead"
+   ],
+   "mut": {
+    "CanUpdate": {
+     "checks": [],
+     "authorship": false
+    },
+    "CanDelete": {
+     "checks": [],
+     "authorship": false
+    }
+   }
+  },
+  "TimeEntry": {
+   "file": "time_tracking.go",
+   "create": [
+    "?project.CanRead",
+    "Task.CanRead"
+   ],
+   "mut": {
+    "CanUpdate": {
+     "checks": [
+      "?project.CanRead",
+      "Task.CanRead"
+     ],
+     "authorship": true
+    },
+    "CanDelete": {
+     "checks": [
+      "?project.CanRead",
+      "Task.CanRead"
+     ],
+     "authorship": true
+    }
+   }
+  },
+  "Webhook": {
+   "file": "webhooks_permissions.go",
+   "create": [
+    "Project.CanWrite"
+   ],
+   "mut": {
+    "CanUpdate": {
+     "checks": [
+      "Project.CanWrite"
+     ],
+     "authorship": true
+    },
+    "CanDelete": {
+     "checks": [
+      "Project.CanWrite"
+     ],
+     "authorship": true
+    }
+   }
+  }
+ },
+ "flags": []
+}

@@ -1,0 +1,169 @@
+{
+ "subject": "gitea-v1.26.2",
+ "check": "RC+CL (read side), depth 3",
+ "artifacts": {
+  "Task": [
+   "DoerID"
+  ],
+  "Action": [
+   "UserID"
+  ],
+  "Notification": [
+   "UserID"
+  ],
+  "ContentHistory": [
+   "PosterID"
+  ],
+  "IssueWatch": [
+   "UserID"
+  ],
+  "Comment": [
+   "AssigneeID",
+   "PosterID"
+  ],
+  "IssueAssignees": [
+   "AssigneeID"
+  ],
+  "IssueDependency": [
+   "UserID"
+  ],
+  "TrackedTime": [
+   "UserID"
+  ],
+  "Stopwatch": [
+   "UserID"
+  ],
+  "Reaction": [
+   "UserID"
+  ],
+  "IssueUser": [
+   "UID"
+  ],
+  "Issue": [
+   "AssigneeID",
+   "PosterID"
+  ],
+  "Star": [
+   "UID"
+  ],
+  "RepoTransfer": [
+   "DoerID"
+  ],
+  "Watch": [
+   "UserID"
+  ]
+ },
+ "cl_matrix": {
+  "visibility->private": {
+   "services/repository.MakeRepoPrivate": [
+    "Star",
+    "Watch"
+   ],
+   "services/repository.updateRepository": [
+    "Star"
+   ]
+  },
+  "member removal": {
+   "services/repository.DeleteCollaboration": [
+    "Issue",
+    "IssueAssignees",
+    "IssueWatch",
+    "Stopwatch",
+    "Watch"
+   ],
+   "services/org.removeTeamMember": [
+    "Issue",
+    "IssueAssignees",
+    "IssueWatch",
+    "Stopwatch",
+    "Watch"
+   ]
+  }
+ },
+ "cl_flags": [
+  {
+   "group": "visibility->private",
+   "entry": "services/repository.updateRepository",
+   "missing_cleanup": "Watch",
+   "cleaned_by": [
+    "services/repository.MakeRepoPrivate"
+   ]
+  }
+ ],
+ "rc_flags": [
+  {
+   "handler": "ListNotifications",
+   "artifacts": [
+    "Notification"
+   ]
+  },
+  {
+   "handler": "NewAvailable",
+   "artifacts": [
+    "Notification"
+   ]
+  },
+  {
+   "handler": "GetMyStarredRepos",
+   "artifacts": [
+    "Star"
+   ]
+  },
+  {
+   "handler": "GetMyWatchedRepos",
+   "artifacts": [
+    "Watch"
+   ]
+  },
+  {
+   "handler": "GetStarredRepos",
+   "artifacts": [
+    "Star"
+   ]
+  },
+  {
+   "handler": "GetWatchedRepos",
+   "artifacts": [
+    "Watch"
+   ]
+  },
+  {
+   "handler": "SignInOAuthCallback",
+   "artifacts": [
+    "Comment",
+    "Issue",
+    "Reaction"
+   ]
+  },
+  {
+   "handler": "Worktime",
+   "artifacts": [
+    "Issue",
+    "TrackedTime"
+   ]
+  },
+  {
+   "handler": "NewAvailable",
+   "artifacts": [
+    "Notification"
+   ]
+  },
+  {
+   "handler": "NotificationSubscriptions",
+   "artifacts": [
+    "Comment",
+    "Issue",
+    "IssueAssignees",
+    "IssueUser",
+    "IssueWatch",
+    "Watch"
+   ]
+  },
+  {
+   "handler": "Notifications",
+   "artifacts": [
+    "Notification"
+   ]
+  }
+ ]
+}

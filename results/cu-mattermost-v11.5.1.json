@@ -1,0 +1,293 @@
+{
+ "resources": {
+  "bot": {
+   "create": [
+    "createBot"
+   ],
+   "create_perms": [
+    "PermissionCreateBot"
+   ],
+   "mutations": {}
+  },
+  "channel": {
+   "create": [
+    "localCreateChannel",
+    "createChannel"
+   ],
+   "create_perms": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ],
+   "mutations": {}
+  },
+  "channelbookmark": {
+   "create": [
+    "createChannelBookmark"
+   ],
+   "create_perms": [
+    "PermissionAddBookmarkPrivateChannel",
+    "PermissionAddBookmarkPublicChannel"
+   ],
+   "mutations": {}
+  },
+  "channelcategorie": {
+   "create": [
+    "createCategoryForTeamForUser"
+   ],
+   "create_perms": [
+    "PermissionViewTeam"
+   ],
+   "mutations": {}
+  },
+  "channelmember": {
+   "create": [
+    "localAddChannelMember",
+    "addChannelMember"
+   ],
+   "create_perms": [
+    "PermissionJoinPublicChannels",
+    "PermissionManagePrivateChannelMembers",
+    "PermissionManagePublicChannelMembers",
+    "PermissionReadChannel"
+   ],
+   "mutations": {}
+  },
+  "command": {
+   "create": [
+    "createCommand",
+    "localCreateCommand"
+   ],
+   "create_perms": [
+    "PermissionManageOthersSlashCommands",
+    "PermissionManageOwnSlashCommands"
+   ],
+   "mutations": {
+    "updateCommand": [
+     "PermissionManageOthersSlashCommands",
+     "PermissionManageOwnSlashCommands"
+    ],
+    "moveCommand": [
+     "PermissionManageOthersSlashCommands",
+     "PermissionManageOwnSlashCommands"
+    ],
+    "regenCommandToken": [
+     "PermissionManageOthersSlashCommands",
+     "PermissionManageOwnSlashCommands"
+    ]
+   }
+  },
+  "customprofileattributesfield": {
+   "create": [
+    "createCPAField",
+    "createCPAField"
+   ],
+   "create_perms": [],
+   "mutations": {}
+  },
+  "draft": {
+   "create": [
+    "upsertDraft"
+   ],
+   "create_perms": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ],
+   "mutations": {}
+  },
+  "group": {
+   "create": [
+    "createGroup"
+   ],
+   "create_perms": [
+    "PermissionCreateCustomGroup"
+   ],
+   "mutations": {}
+  },
+  "incominghook": {
+   "create": [
+    "createIncomingHook",
+    "localCreateIncomingHook"
+   ],
+   "create_perms": [
+    "PermissionBypassIncomingWebhookChannelLock",
+    "PermissionManageOthersIncomingWebhooks",
+    "PermissionManageOwnIncomingWebhooks"
+   ],
+   "mutations": {
+    "updateIncomingHook": [
+     "PermissionBypassIncomingWebhookChannelLock",
+     "PermissionManageOthersIncomingWebhooks",
+     "PermissionManageOwnIncomingWebhooks"
+    ]
+   }
+  },
+  "job": {
+   "create": [
+    "createJob",
+    "createJob"
+   ],
+   "create_perms": [],
+   "mutations": {}
+  },
+  "oauthapp": {
+   "create": [
+    "createOAuthApp"
+   ],
+   "create_perms": [
+    "PermissionManageOAuth"
+   ],
+   "mutations": {
+    "updateOAuthApp": [
+     "PermissionManageOAuth",
+     "PermissionManageSystemWideOAuth"
+    ],
+    "regenerateOAuthAppSecret": [
+     "PermissionManageOAuth",
+     "PermissionManageSystemWideOAuth"
+    ]
+   }
+  },
+  "outgoinghook": {
+   "create": [
+    "createOutgoingHook",
+    "localCreateOutgoingHook"
+   ],
+   "create_perms": [
+    "PermissionManageOthersOutgoingWebhooks",
+    "PermissionManageOwnOutgoingWebhooks"
+   ],
+   "mutations": {
+    "updateOutgoingHook": [
+     "PermissionManageOthersOutgoingWebhooks",
+     "PermissionManageOwnOutgoingWebhooks"
+    ],
+    "regenOutgoingHookToken": [
+     "PermissionManageOthersOutgoingWebhooks",
+     "PermissionManageOwnOutgoingWebhooks"
+    ]
+   }
+  },
+  "outgoingoauthconnection": {
+   "create": [
+    "createOutgoingOAuthConnection"
+   ],
+   "create_perms": [
+    "PermissionManageOutgoingOAuthConnections"
+   ],
+   "mutations": {}
+  },
+  "post": {
+   "create": [
+    "createPost"
+   ],
+   "create_perms": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ],
+   "mutations": {
+    "updatePost": [
+     "PermissionEditOthersPosts",
+     "PermissionEditPost"
+    ],
+    "patchPost": [
+     "PermissionEditOthersPosts",
+     "PermissionEditPost"
+    ],
+    "restorePostVersion": [
+     "PermissionEditOthersPosts",
+     "PermissionEditPost"
+    ]
+   }
+  },
+  "reaction": {
+   "create": [
+    "saveReaction"
+   ],
+   "create_perms": [
+    "PermissionAddReaction"
+   ],
+   "mutations": {}
+  },
+  "recap": {
+   "create": [
+    "createRecap"
+   ],
+   "create_perms": [],
+   "mutations": {}
+  },
+  "scheme": {
+   "create": [
+    "createScheme"
+   ],
+   "create_perms": [
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ],
+   "mutations": {}
+  },
+  "team": {
+   "create": [
+    "createTeam",
+    "localCreateTeam"
+   ],
+   "create_perms": [
+    "PermissionCreateTeam",
+    "PermissionInviteUser",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ],
+   "mutations": {}
+  },
+  "teammember": {
+   "create": [
+    "addTeamMember",
+    "addTeamMember"
+   ],
+   "create_perms": [
+    "PermissionAddUserToTeam",
+    "PermissionInviteGuest",
+    "PermissionJoinPrivateTeams",
+    "PermissionJoinPublicTeams"
+   ],
+   "mutations": {}
+  },
+  "user": {
+   "create": [
+    "createUser",
+    "createUser"
+   ],
+   "create_perms": [],
+   "mutations": {}
+  }
+ },
+ "flags": [
+  {
+   "resource": "post",
+   "handler": "updatePost",
+   "route": "PUT Post",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "patchPost",
+   "route": "PUT Post/patch",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "restorePostVersion",
+   "route": "POST Post/restore/{restore_version_id:[A-Za-z0-9]+}",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  }
+ ]
+}

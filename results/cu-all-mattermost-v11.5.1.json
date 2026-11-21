@@ -1,0 +1,862 @@
+{
+ "resources": {
+  "bot": {
+   "create": [
+    "createBot"
+   ],
+   "create_perms": [
+    "PermissionCreateBot"
+   ],
+   "mutations": {
+    "patchBot": [],
+    "disableBot": [],
+    "enableBot": [],
+    "convertBotToUser": [],
+    "assignBot": []
+   }
+  },
+  "channel": {
+   "create": [
+    "localCreateChannel",
+    "createChannel"
+   ],
+   "create_perms": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ],
+   "mutations": {
+    "localPatchChannel": [],
+    "localMoveChannel": [],
+    "localUpdateChannelPrivacy": [],
+    "localRestoreChannel": [],
+    "inviteRemoteClusterToChannel": [
+     "PermissionManageSecureConnections"
+    ],
+    "uninviteRemoteClusterToChannel": [
+     "PermissionManageSecureConnections"
+    ],
+    "updateChannel": [
+     "PermissionManagePrivateChannelProperties",
+     "PermissionManagePublicChannelProperties"
+    ],
+    "patchChannel": [
+     "PermissionManagePrivateChannelAutoTranslation",
+     "PermissionManagePrivateChannelBanner",
+     "PermissionManagePrivateChannelProperties",
+     "PermissionManagePublicChannelAutoTranslation",
+     "PermissionManagePublicChannelBanner",
+     "PermissionManagePublicChannelProperties"
+    ],
+    "updateChannelPrivacy": [
+     "PermissionConvertPrivateChannelToPublic",
+     "PermissionConvertPublicChannelToPrivate"
+    ],
+    "restoreChannel": [
+     "PermissionManageTeam",
+     "PermissionSysconsoleWriteUserManagementChannels"
+    ],
+    "moveChannel": [],
+    "convertGroupMessageToChannel": [
+     "PermissionCreatePrivateChannel"
+    ]
+   }
+  },
+  "channelbookmark": {
+   "create": [
+    "createChannelBookmark"
+   ],
+   "create_perms": [
+    "PermissionAddBookmarkPrivateChannel",
+    "PermissionAddBookmarkPublicChannel"
+   ],
+   "mutations": {
+    "updateChannelBookmark": [
+     "PermissionEditBookmarkPrivateChannel",
+     "PermissionEditBookmarkPublicChannel"
+    ],
+    "updateChannelBookmarkSortOrder": [
+     "PermissionOrderBookmarkPrivateChannel",
+     "PermissionOrderBookmarkPublicChannel"
+    ]
+   }
+  },
+  "channelcategorie": {
+   "create": [
+    "createCategoryForTeamForUser"
+   ],
+   "create_perms": [
+    "PermissionViewTeam"
+   ],
+   "mutations": {}
+  },
+  "channelmember": {
+   "create": [
+    "localAddChannelMember",
+    "addChannelMember"
+   ],
+   "create_perms": [
+    "PermissionJoinPublicChannels",
+    "PermissionManagePrivateChannelMembers",
+    "PermissionManagePublicChannelMembers",
+    "PermissionReadChannel"
+   ],
+   "mutations": {
+    "updateChannelMemberRoles": [
+     "PermissionManageChannelRoles"
+    ],
+    "updateChannelMemberSchemeRoles": [
+     "PermissionManageChannelRoles"
+    ],
+    "updateChannelMemberNotifyProps": [],
+    "updateChannelMemberAutotranslation": []
+   }
+  },
+  "command": {
+   "create": [
+    "createCommand",
+    "localCreateCommand"
+   ],
+   "create_perms": [
+    "PermissionManageOthersSlashCommands",
+    "PermissionManageOwnSlashCommands"
+   ],
+   "mutations": {
+    "updateCommand": [
+     "PermissionManageOthersSlashCommands",
+     "PermissionManageOwnSlashCommands"
+    ],
+    "moveCommand": [
+     "PermissionManageOthersSlashCommands",
+     "PermissionManageOwnSlashCommands"
+    ],
+    "regenCommandToken": [
+     "PermissionManageOthersSlashCommands",
+     "PermissionManageOwnSlashCommands"
+    ]
+   }
+  },
+  "customprofileattributesfield": {
+   "create": [
+    "createCPAField",
+    "createCPAField"
+   ],
+   "create_perms": [],
+   "mutations": {
+    "patchCPAField": []
+   }
+  },
+  "draft": {
+   "create": [
+    "upsertDraft"
+   ],
+   "create_perms": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ],
+   "mutations": {}
+  },
+  "group": {
+   "create": [
+    "createGroup"
+   ],
+   "create_perms": [
+    "PermissionCreateCustomGroup"
+   ],
+   "mutations": {}
+  },
+  "incominghook": {
+   "create": [
+    "createIncomingHook",
+    "localCreateIncomingHook"
+   ],
+   "create_perms": [
+    "PermissionBypassIncomingWebhookChannelLock",
+    "PermissionManageOthersIncomingWebhooks",
+    "PermissionManageOwnIncomingWebhooks"
+   ],
+   "mutations": {
+    "updateIncomingHook": [
+     "PermissionBypassIncomingWebhookChannelLock",
+     "PermissionManageOthersIncomingWebhooks",
+     "PermissionManageOwnIncomingWebhooks"
+    ]
+   }
+  },
+  "job": {
+   "create": [
+    "createJob",
+    "createJob"
+   ],
+   "create_perms": [],
+   "mutations": {}
+  },
+  "oauthapp": {
+   "create": [
+    "createOAuthApp"
+   ],
+   "create_perms": [
+    "PermissionManageOAuth"
+   ],
+   "mutations": {
+    "updateOAuthApp": [
+     "PermissionManageOAuth",
+     "PermissionManageSystemWideOAuth"
+    ],
+    "regenerateOAuthAppSecret": [
+     "PermissionManageOAuth",
+     "PermissionManageSystemWideOAuth"
+    ]
+   }
+  },
+  "outgoinghook": {
+   "create": [
+    "createOutgoingHook",
+    "localCreateOutgoingHook"
+   ],
+   "create_perms": [
+    "PermissionManageOthersOutgoingWebhooks",
+    "PermissionManageOwnOutgoingWebhooks"
+   ],
+   "mutations": {
+    "updateOutgoingHook": [
+     "PermissionManageOthersOutgoingWebhooks",
+     "PermissionManageOwnOutgoingWebhooks"
+    ],
+    "regenOutgoingHookToken": [
+     "PermissionManageOthersOutgoingWebhooks",
+     "PermissionManageOwnOutgoingWebhooks"
+    ]
+   }
+  },
+  "outgoingoauthconnection": {
+   "create": [
+    "createOutgoingOAuthConnection"
+   ],
+   "create_perms": [
+    "PermissionManageOutgoingOAuthConnections"
+   ],
+   "mutations": {
+    "updateOutgoingOAuthConnection": [
+     "PermissionManageOutgoingOAuthConnections"
+    ]
+   }
+  },
+  "post": {
+   "create": [
+    "createPost"
+   ],
+   "create_perms": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ],
+   "mutations": {
+    "updatePost": [
+     "PermissionEditOthersPosts",
+     "PermissionEditPost"
+    ],
+    "patchPost": [
+     "PermissionEditOthersPosts",
+     "PermissionEditPost"
+    ],
+    "restorePostVersion": [
+     "PermissionEditOthersPosts",
+     "PermissionEditPost"
+    ],
+    "setPostUnread": [],
+    "setPostReminder": [],
+    "pinPost": [],
+    "unpinPost": [],
+    "acknowledgePost": [],
+    "moveThread": [],
+    "doPostAction": []
+   }
+  },
+  "reaction": {
+   "create": [
+    "saveReaction"
+   ],
+   "create_perms": [
+    "PermissionAddReaction"
+   ],
+   "mutations": {}
+  },
+  "recap": {
+   "create": [
+    "createRecap"
+   ],
+   "create_perms": [],
+   "mutations": {}
+  },
+  "scheme": {
+   "create": [
+    "createScheme"
+   ],
+   "create_perms": [
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ],
+   "mutations": {}
+  },
+  "team": {
+   "create": [
+    "createTeam",
+    "localCreateTeam"
+   ],
+   "create_perms": [
+    "PermissionCreateTeam",
+    "PermissionInviteUser",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ],
+   "mutations": {
+    "updateTeam": [
+     "PermissionInviteUser",
+     "PermissionManageTeam"
+    ],
+    "patchTeam": [
+     "PermissionInviteUser",
+     "PermissionManageTeam"
+    ],
+    "restoreTeam": [
+     "PermissionManageTeam"
+    ],
+    "updateTeamPrivacy": [
+     "PermissionInviteUser",
+     "PermissionManageTeam"
+    ],
+    "regenerateTeamInviteId": [
+     "PermissionInviteUser",
+     "PermissionManageTeam"
+    ],
+    "importTeam": [
+     "PermissionImportTeam"
+    ],
+    "inviteUsersToTeam": [
+     "PermissionAddUserToTeam",
+     "PermissionInviteUser"
+    ],
+    "inviteGuestsToChannels": [
+     "PermissionInviteGuest"
+    ],
+    "localInviteUsersToTeam": []
+   }
+  },
+  "teammember": {
+   "create": [
+    "addTeamMember",
+    "addTeamMember"
+   ],
+   "create_perms": [
+    "PermissionAddUserToTeam",
+    "PermissionInviteGuest",
+    "PermissionJoinPrivateTeams",
+    "PermissionJoinPublicTeams"
+   ],
+   "mutations": {
+    "updateTeamMemberRoles": [
+     "PermissionManageTeamRoles"
+    ],
+    "updateTeamMemberSchemeRoles": [
+     "PermissionManageTeamRoles"
+    ]
+   }
+  },
+  "user": {
+   "create": [
+    "createUser",
+    "createUser"
+   ],
+   "create_perms": [],
+   "mutations": {
+    "updateUser": [],
+    "patchUser": [],
+    "updateUserRoles": [
+     "PermissionManageRoles"
+    ],
+    "updateUserActive": [
+     "PermissionSysconsoleWriteUserManagementUsers"
+    ],
+    "updatePassword": [
+     "PermissionSysconsoleWriteUserManagementUsers"
+    ],
+    "promoteGuestToUser": [
+     "PermissionPromoteGuest"
+    ],
+    "demoteUserToGuest": [
+     "PermissionDemoteToGuest"
+    ],
+    "convertUserToBot": [],
+    "verifyUserEmailWithoutToken": [],
+    "saveUserTermsOfService": [],
+    "resetPasswordFailedAttempts": [
+     "PermissionSysconsoleWriteUserManagementUsers"
+    ],
+    "updateUserAuth": [],
+    "updateUserMfa": [],
+    "generateMfaSecret": [],
+    "revokeSession": [],
+    "revokeAllSessionsForUser": [],
+    "createUserAccessToken": [
+     "PermissionCreateUserAccessToken"
+    ],
+    "publishUserTyping": [
+     "PermissionCreatePost"
+    ],
+    "patchCPAValuesForUser": [],
+    "updateUserStatus": [],
+    "updateUserCustomStatus": [],
+    "removeUserRecentCustomStatus": []
+   }
+  }
+ },
+ "flags": [
+  {
+   "resource": "bot",
+   "handler": "patchBot",
+   "route": "PUT Bot",
+   "file": "api4/bot.go",
+   "missing": [
+    "PermissionCreateBot"
+   ]
+  },
+  {
+   "resource": "bot",
+   "handler": "disableBot",
+   "route": "POST Bot/disable",
+   "file": "api4/bot.go",
+   "missing": [
+    "PermissionCreateBot"
+   ]
+  },
+  {
+   "resource": "bot",
+   "handler": "enableBot",
+   "route": "POST Bot/enable",
+   "file": "api4/bot.go",
+   "missing": [
+    "PermissionCreateBot"
+   ]
+  },
+  {
+   "resource": "bot",
+   "handler": "convertBotToUser",
+   "route": "POST Bot/convert_to_user",
+   "file": "api4/bot.go",
+   "missing": [
+    "PermissionCreateBot"
+   ]
+  },
+  {
+   "resource": "bot",
+   "handler": "assignBot",
+   "route": "POST Bot/assign/{user_id:[A-Za-z0-9]+}",
+   "file": "api4/bot.go",
+   "missing": [
+    "PermissionCreateBot"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "localPatchChannel",
+   "route": "PUT Channel/patch",
+   "file": "api4/channel_local.go",
+   "missing": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "localMoveChannel",
+   "route": "POST Channel/move",
+   "file": "api4/channel_local.go",
+   "missing": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "localUpdateChannelPrivacy",
+   "route": "PUT Channel/privacy",
+   "file": "api4/channel_local.go",
+   "missing": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "localRestoreChannel",
+   "route": "POST Channel/restore",
+   "file": "api4/channel_local.go",
+   "missing": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "inviteRemoteClusterToChannel",
+   "route": "POST ChannelForRemote/invite",
+   "file": "api4/shared_channel.go",
+   "missing": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "uninviteRemoteClusterToChannel",
+   "route": "POST ChannelForRemote/uninvite",
+   "file": "api4/shared_channel.go",
+   "missing": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "updateChannel",
+   "route": "PUT Channel",
+   "file": "api4/channel.go",
+   "missing": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "patchChannel",
+   "route": "PUT Channel/patch",
+   "file": "api4/channel.go",
+   "missing": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "updateChannelPrivacy",
+   "route": "PUT Channel/privacy",
+   "file": "api4/channel.go",
+   "missing": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "restoreChannel",
+   "route": "POST Channel/restore",
+   "file": "api4/channel.go",
+   "missing": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "moveChannel",
+   "route": "POST Channel/move",
+   "file": "api4/channel.go",
+   "missing": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channel",
+   "handler": "convertGroupMessageToChannel",
+   "route": "POST Channel/convert_to_channel",
+   "file": "api4/channel.go",
+   "missing": [
+    "PermissionCreatePublicChannel"
+   ]
+  },
+  {
+   "resource": "channelbookmark",
+   "handler": "updateChannelBookmark",
+   "route": "PATCH ChannelBookmark",
+   "file": "api4/channel_bookmark.go",
+   "missing": [
+    "PermissionAddBookmarkPrivateChannel",
+    "PermissionAddBookmarkPublicChannel"
+   ]
+  },
+  {
+   "resource": "channelbookmark",
+   "handler": "updateChannelBookmarkSortOrder",
+   "route": "POST ChannelBookmark/sort_order",
+   "file": "api4/channel_bookmark.go",
+   "missing": [
+    "PermissionAddBookmarkPrivateChannel",
+    "PermissionAddBookmarkPublicChannel"
+   ]
+  },
+  {
+   "resource": "channelmember",
+   "handler": "updateChannelMemberRoles",
+   "route": "PUT ChannelMember/roles",
+   "file": "api4/channel.go",
+   "missing": [
+    "PermissionJoinPublicChannels",
+    "PermissionManagePrivateChannelMembers",
+    "PermissionManagePublicChannelMembers",
+    "PermissionReadChannel"
+   ]
+  },
+  {
+   "resource": "channelmember",
+   "handler": "updateChannelMemberSchemeRoles",
+   "route": "PUT ChannelMember/schemeRoles",
+   "file": "api4/channel.go",
+   "missing": [
+    "PermissionJoinPublicChannels",
+    "PermissionManagePrivateChannelMembers",
+    "PermissionManagePublicChannelMembers",
+    "PermissionReadChannel"
+   ]
+  },
+  {
+   "resource": "channelmember",
+   "handler": "updateChannelMemberNotifyProps",
+   "route": "PUT ChannelMember/notify_props",
+   "file": "api4/channel.go",
+   "missing": [
+    "PermissionJoinPublicChannels",
+    "PermissionManagePrivateChannelMembers",
+    "PermissionManagePublicChannelMembers",
+    "PermissionReadChannel"
+   ]
+  },
+  {
+   "resource": "channelmember",
+   "handler": "updateChannelMemberAutotranslation",
+   "route": "PUT ChannelMember/autotranslation",
+   "file": "api4/channel.go",
+   "missing": [
+    "PermissionJoinPublicChannels",
+    "PermissionManagePrivateChannelMembers",
+    "PermissionManagePublicChannelMembers",
+    "PermissionReadChannel"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "updatePost",
+   "route": "PUT Post",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "patchPost",
+   "route": "PUT Post/patch",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "restorePostVersion",
+   "route": "POST Post/restore/{restore_version_id:[A-Za-z0-9]+}",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "setPostUnread",
+   "route": "POST PostForUser/set_unread",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "setPostReminder",
+   "route": "POST PostForUser/reminder",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "pinPost",
+   "route": "POST Post/pin",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "unpinPost",
+   "route": "POST Post/unpin",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "acknowledgePost",
+   "route": "POST PostForUser/ack",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "moveThread",
+   "route": "POST Post/move",
+   "file": "api4/post.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "post",
+   "handler": "doPostAction",
+   "route": "POST Post/actions/{action_id:[A-Za-z0-9]+}",
+   "file": "api4/integration_action.go",
+   "missing": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ]
+  },
+  {
+   "resource": "team",
+   "handler": "updateTeam",
+   "route": "PUT Team",
+   "file": "api4/team.go",
+   "missing": [
+    "PermissionCreateTeam",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ]
+  },
+  {
+   "resource": "team",
+   "handler": "patchTeam",
+   "route": "PUT Team/patch",
+   "file": "api4/team.go",
+   "missing": [
+    "PermissionCreateTeam",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ]
+  },
+  {
+   "resource": "team",
+   "handler": "restoreTeam",
+   "route": "POST Team/restore",
+   "file": "api4/team.go",
+   "missing": [
+    "PermissionCreateTeam",
+    "PermissionInviteUser",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ]
+  },
+  {
+   "resource": "team",
+   "handler": "updateTeamPrivacy",
+   "route": "PUT Team/privacy",
+   "file": "api4/team.go",
+   "missing": [
+    "PermissionCreateTeam",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ]
+  },
+  {
+   "resource": "team",
+   "handler": "regenerateTeamInviteId",
+   "route": "POST Team/regenerate_invite_id",
+   "file": "api4/team.go",
+   "missing": [
+    "PermissionCreateTeam",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ]
+  },
+  {
+   "resource": "team",
+   "handler": "importTeam",
+   "route": "POST Team/import",
+   "file": "api4/team.go",
+   "missing": [
+    "PermissionCreateTeam",
+    "PermissionInviteUser",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ]
+  },
+  {
+   "resource": "team",
+   "handler": "inviteUsersToTeam",
+   "route": "POST Team/invite/email",
+   "file": "api4/team.go",
+   "missing": [
+    "PermissionCreateTeam",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ]
+  },
+  {
+   "resource": "team",
+   "handler": "inviteGuestsToChannels",
+   "route": "POST Team/invite-guests/email",
+   "file": "api4/team.go",
+   "missing": [
+    "PermissionCreateTeam",
+    "PermissionInviteUser",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ]
+  },
+  {
+   "resource": "team",
+   "handler": "localInviteUsersToTeam",
+   "route": "POST Team/invite/email",
+   "file": "api4/team_local.go",
+   "missing": [
+    "PermissionCreateTeam",
+    "PermissionInviteUser",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ]
+  },
+  {
+   "resource": "teammember",
+   "handler": "updateTeamMemberRoles",
+   "route": "PUT TeamMember/roles",
+   "file": "api4/team.go",
+   "missing": [
+    "PermissionAddUserToTeam",
+    "PermissionInviteGuest",
+    "PermissionJoinPrivateTeams",
+    "PermissionJoinPublicTeams"
+   ]
+  },
+  {
+   "resource": "teammember",
+   "handler": "updateTeamMemberSchemeRoles",
+   "route": "PUT TeamMember/schemeRoles",
+   "file": "api4/team.go",
+   "missing": [
+    "PermissionAddUserToTeam",
+    "PermissionInviteGuest",
+    "PermissionJoinPrivateTeams",
+    "PermissionJoinPublicTeams"
+   ]
+  }
+ ]
+}

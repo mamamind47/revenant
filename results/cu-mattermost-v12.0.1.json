@@ -1,0 +1,322 @@
+{
+ "resources": {
+  "board": {
+   "create": [
+    "createBoard"
+   ],
+   "create_perms": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel"
+   ],
+   "mutations": {}
+  },
+  "bot": {
+   "create": [
+    "createBot"
+   ],
+   "create_perms": [
+    "PermissionCreateBot"
+   ],
+   "mutations": {}
+  },
+  "channel": {
+   "create": [
+    "localCreateChannel",
+    "createChannel"
+   ],
+   "create_perms": [
+    "PermissionCreatePrivateChannel",
+    "PermissionCreatePublicChannel",
+    "PermissionLevelAdmin",
+    "PermissionLevelMember",
+    "PermissionLevelSysadmin",
+    "PermissionManagePrivateChannelDiscoverability"
+   ],
+   "mutations": {}
+  },
+  "channelbookmark": {
+   "create": [
+    "createChannelBookmark"
+   ],
+   "create_perms": [
+    "PermissionAddBookmarkPrivateChannel",
+    "PermissionAddBookmarkPublicChannel"
+   ],
+   "mutations": {}
+  },
+  "channelcategorie": {
+   "create": [
+    "createCategoryForTeamForUser"
+   ],
+   "create_perms": [
+    "PermissionViewTeam"
+   ],
+   "mutations": {}
+  },
+  "channelmember": {
+   "create": [
+    "localAddChannelMember",
+    "addChannelMember"
+   ],
+   "create_perms": [
+    "PermissionJoinPublicChannels",
+    "PermissionManagePrivateChannelMembers",
+    "PermissionManagePublicChannelMembers",
+    "PermissionReadChannel"
+   ],
+   "mutations": {}
+  },
+  "channelview": {
+   "create": [
+    "createView"
+   ],
+   "create_perms": [
+    "PermissionCreatePost"
+   ],
+   "mutations": {}
+  },
+  "command": {
+   "create": [
+    "createCommand",
+    "localCreateCommand"
+   ],
+   "create_perms": [
+    "PermissionManageOthersSlashCommands",
+    "PermissionManageOwnSlashCommands"
+   ],
+   "mutations": {
+    "updateCommand": [
+     "PermissionManageOthersSlashCommands",
+     "PermissionManageOwnSlashCommands"
+    ],
+    "moveCommand": [
+     "PermissionManageOthersSlashCommands",
+     "PermissionManageOwnSlashCommands"
+    ],
+    "regenCommandToken": [
+     "PermissionManageOthersSlashCommands",
+     "PermissionManageOwnSlashCommands"
+    ]
+   }
+  },
+  "customprofileattributesfield": {
+   "create": [
+    "createCPAField",
+    "createCPAField"
+   ],
+   "create_perms": [],
+   "mutations": {}
+  },
+  "draft": {
+   "create": [
+    "upsertDraft"
+   ],
+   "create_perms": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ],
+   "mutations": {}
+  },
+  "group": {
+   "create": [
+    "createGroup"
+   ],
+   "create_perms": [
+    "PermissionCreateCustomGroup"
+   ],
+   "mutations": {}
+  },
+  "incominghook": {
+   "create": [
+    "createIncomingHook",
+    "localCreateIncomingHook"
+   ],
+   "create_perms": [
+    "PermissionBypassIncomingWebhookChannelLock",
+    "PermissionManageOthersIncomingWebhooks",
+    "PermissionManageOwnIncomingWebhooks"
+   ],
+   "mutations": {
+    "updateIncomingHook": [
+     "PermissionBypassIncomingWebhookChannelLock",
+     "PermissionManageOthersIncomingWebhooks",
+     "PermissionManageOwnIncomingWebhooks"
+    ]
+   }
+  },
+  "job": {
+   "create": [
+    "createJob",
+    "createJob"
+   ],
+   "create_perms": [],
+   "mutations": {}
+  },
+  "oauthapp": {
+   "create": [
+    "createOAuthApp"
+   ],
+   "create_perms": [
+    "PermissionManageOAuth"
+   ],
+   "mutations": {
+    "updateOAuthApp": [
+     "PermissionManageOAuth",
+     "PermissionManageSystemWideOAuth"
+    ],
+    "regenerateOAuthAppSecret": [
+     "PermissionManageOAuth",
+     "PermissionManageSystemWideOAuth"
+    ]
+   }
+  },
+  "outgoinghook": {
+   "create": [
+    "createOutgoingHook",
+    "localCreateOutgoingHook"
+   ],
+   "create_perms": [
+    "PermissionManageOthersOutgoingWebhooks",
+    "PermissionManageOwnOutgoingWebhooks"
+   ],
+   "mutations": {
+    "updateOutgoingHook": [
+     "PermissionManageOthersOutgoingWebhooks",
+     "PermissionManageOwnOutgoingWebhooks"
+    ],
+    "regenOutgoingHookToken": [
+     "PermissionManageOthersOutgoingWebhooks",
+     "PermissionManageOwnOutgoingWebhooks"
+    ]
+   }
+  },
+  "outgoingoauthconnection": {
+   "create": [
+    "createOutgoingOAuthConnection"
+   ],
+   "create_perms": [
+    "PermissionManageOutgoingOAuthConnections"
+   ],
+   "mutations": {}
+  },
+  "post": {
+   "create": [
+    "createPost"
+   ],
+   "create_perms": [
+    "PermissionCreatePost",
+    "PermissionCreatePostPublic"
+   ],
+   "mutations": {
+    "updatePost": [
+     "PermissionCreatePost",
+     "PermissionCreatePostPublic",
+     "PermissionEditFileAttachment",
+     "PermissionEditOthersPosts",
+     "PermissionEditPost"
+    ],
+    "patchPost": [
+     "PermissionCreatePost",
+     "PermissionCreatePostPublic",
+     "PermissionEditFileAttachment",
+     "PermissionEditOthersPosts",
+     "PermissionEditPost"
+    ],
+    "restorePostVersion": [
+     "PermissionCreatePost",
+     "PermissionCreatePostPublic",
+     "PermissionEditOthersPosts",
+     "PermissionEditPost"
+    ]
+   }
+  },
+  "propertyfield": {
+   "create": [
+    "createPropertyField"
+   ],
+   "create_perms": [
+    "PermissionCreatePost",
+    "PermissionManageTeam"
+   ],
+   "mutations": {}
+  },
+  "propertyfieldoption": {
+   "create": [
+    "createPropertyFieldOptions"
+   ],
+   "create_perms": [],
+   "mutations": {}
+  },
+  "reaction": {
+   "create": [
+    "saveReaction"
+   ],
+   "create_perms": [
+    "PermissionAddReaction"
+   ],
+   "mutations": {}
+  },
+  "recap": {
+   "create": [
+    "createRecap"
+   ],
+   "create_perms": [],
+   "mutations": {}
+  },
+  "scheduledrecap": {
+   "create": [
+    "createScheduledRecap"
+   ],
+   "create_perms": [],
+   "mutations": {
+    "updateScheduledRecap": [],
+    "pauseScheduledRecap": [],
+    "resumeScheduledRecap": []
+   }
+  },
+  "scheme": {
+   "create": [
+    "createScheme"
+   ],
+   "create_perms": [
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ],
+   "mutations": {}
+  },
+  "team": {
+   "create": [
+    "createTeam",
+    "localCreateTeam"
+   ],
+   "create_perms": [
+    "PermissionCreateTeam",
+    "PermissionInviteUser",
+    "PermissionSysconsoleWriteUserManagementPermissions"
+   ],
+   "mutations": {}
+  },
+  "teammember": {
+   "create": [
+    "addTeamMember",
+    "addTeamMember"
+   ],
+   "create_perms": [
+    "PermissionAddUserToTeam",
+    "PermissionInviteGuest",
+    "PermissionJoinPrivateTeams",
+    "PermissionJoinPublicTeams",
+    "PermissionManageTeamRoles"
+   ],
+   "mutations": {}
+  },
+  "user": {
+   "create": [
+    "createUser",
+    "createUser"
+   ],
+   "create_perms": [],
+   "mutations": {}
+  }
+ },
+ "flags": []
+}

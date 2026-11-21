@@ -1,0 +1,61 @@
+{
+ "derive_actions": [
+  {
+   "file": "src/Controller/TimesheetTeamController.php",
+   "line": 66,
+   "action": "duplicateAction",
+   "routes": [
+    "GET, POST /{id}/duplicate"
+   ],
+   "gates": [
+    "duplicate(entry)"
+   ],
+   "ref_checked_by": [
+    "duplicate"
+   ]
+  },
+  {
+   "file": "src/Controller/TimesheetController.php",
+   "line": 56,
+   "action": "duplicateAction",
+   "routes": [
+    "GET, POST /{id}/duplicate"
+   ],
+   "gates": [
+    "duplicate(entry)"
+   ],
+   "ref_checked_by": [
+    "duplicate"
+   ]
+  },
+  {
+   "file": "src/API/TimesheetController.php",
+   "line": 451,
+   "action": "restartAction",
+   "routes": [
+    "PATCH /{id}/restart"
+   ],
+   "gates": [
+    "start(timesheet)"
+   ],
+   "ref_checked_by": [
+    "start"
+   ]
+  },
+  {
+   "file": "src/API/TimesheetController.php",
+   "line": 511,
+   "action": "duplicateAction",
+   "routes": [
+    "PATCH /{id}/duplicate"
+   ],
+   "gates": [
+    "duplicate(timesheet)"
+   ],
+   "ref_checked_by": [
+    "duplicate"
+   ]
+  }
+ ],
+ "flags": []
+}
